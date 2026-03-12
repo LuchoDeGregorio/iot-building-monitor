@@ -3,6 +3,21 @@ import pandas as pd
 from supabase import create_client
 from datetime import datetime
 from streamlit_autorefresh import st_autorefresh
+import requests
+
+TOKEN = "bot8584675746:AAFgKS-AltFuBy0lONgy_mJaz0agNED9KDo"
+CHAT_ID = "8620998433"
+
+def enviar_alerta(mensaje):
+
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+
+    data = {
+        "chat_id": CHAT_ID,
+        "text": mensaje
+    }
+
+    requests.post(url, data=data)
 
 st.set_page_config(page_title="Monitoreo Edificios", layout="wide")
 
@@ -49,10 +64,12 @@ if not data.empty:
 
     if nivel < 30:
         st.warning("⚠ Nivel de tanque bajo")
+        enviar_alerta(f"⚠ ALERTA\nNivel de tanque bajo: {nivel}%")
         alerta = True
 
     if temperatura > 40:
         st.warning("⚠ Temperatura alta en sala de máquinas")
+        enviar_alerta(f"⚠ ALERTA\nTemperatura alta: {temperatura}°C")
         alerta = True
 
     if corriente > 1:
@@ -89,6 +106,8 @@ if not data.empty:
     st.line_chart(
         data_device.set_index("created_at")["temperatura"]
     )
+
+    enviar_alerta("Prueba de alerta desde el sistema IoT")
 
 else:
     st.warning("No hay datos todavía")
