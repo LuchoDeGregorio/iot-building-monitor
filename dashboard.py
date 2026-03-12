@@ -43,6 +43,24 @@ if not data.empty:
     nivel = ultimo["nivel_tanque"]
     corriente = ultimo["corriente"]
 
+    st.subheader("Alertas del sistema")
+
+    alerta = False
+
+    if nivel < 30:
+        st.warning("⚠ Nivel de tanque bajo")
+        alerta = True
+
+    if temperatura > 40:
+        st.warning("⚠ Temperatura alta en sala de máquinas")
+        alerta = True
+
+    if corriente > 1:
+        st.info("⚡ Bomba en funcionamiento")
+
+    if not alerta:
+        st.success("✅ Sistema funcionando normalmente")
+
     col1, col2, col3 = st.columns(3)
 
     col1.metric("Temperatura", f"{temperatura:.2f} °C")
