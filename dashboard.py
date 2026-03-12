@@ -23,7 +23,9 @@ key = st.secrets["SUPABASE_KEY"]
 supabase = create_client(url, key)
 
 # obtener datos
-response = supabase.table("sensor_data").select("*").limit(200).execute()
+response = supabase.table("sensor_data").select("*").order("created_at", desc=True).limit(200).execute()
+st.write("Últimos datos recibidos:")
+st.write(response.data[:5])
 
 data = pd.DataFrame(response.data)
 
