@@ -5,7 +5,7 @@ from datetime import datetime
 from streamlit_autorefresh import st_autorefresh
 import requests
 
-TOKEN = "bot8584675746:AAFgKS-AltFuBy0lONgy_mJaz0agNED9KDo"
+TOKEN = "8584675746:AAFgKS-AltFuBy0lONgy_mJaz0agNED9KDo"
 CHAT_ID = "8620998433"
 
 def enviar_alerta(mensaje):
