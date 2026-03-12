@@ -24,8 +24,8 @@ supabase = create_client(url, key)
 
 # obtener datos
 response = supabase.table("sensor_data").select("*").order("created_at", desc=True).limit(200).execute()
-st.write("Últimos datos recibidos:")
-st.write(response.data[:5])
+#st.write("Últimos datos recibidos:")
+#st.write(response.data[:5])
 
 data = pd.DataFrame(response.data)
 
@@ -71,9 +71,9 @@ if not data.empty:
     diferencia = ahora - ultimo["created_at"]
 
     if diferencia.total_seconds() < 120:
-        st.success("Dispositivo ONLINE")
+       st.success("🟢 Sistema ONLINE")
     else:
-        st.error("Dispositivo OFFLINE")
+       st.error("🔴 Sistema OFFLINE")
 
     st.write("Última actualización:", ultimo["created_at"])
 
