@@ -107,7 +107,7 @@ if not data.empty:
         data_device.set_index("created_at")["temperatura"]
     )
 
-    enviar_alerta("Prueba de alerta desde el sistema IoT")
+    #enviar_alerta("Prueba de alerta desde el sistema IoT")
 
 else:
     st.warning("No hay datos todavía")
