@@ -109,6 +109,12 @@ if not data.empty:
         data_device.set_index("created_at")["temperatura"]
     )
 
+    st.subheader("Histórico de ruido")
+
+    st.line_chart(
+        data_device.set_index("created_at")["ruido"]
+    )
+
 #enviar_alerta("Prueba de alerta desde el sistema IoT")
 
 else:
