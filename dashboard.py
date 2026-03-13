@@ -84,7 +84,7 @@ if not data.empty:
     col1.metric("Temperatura", f"{temperatura:.2f} °C")
     col2.metric("Nivel tanque", f"{nivel} %")
     col3.metric("Corriente bomba", f"{corriente} A")
-    col4.metric("Corriente bomba", f"{ruido} Nivel")
+    col4.metric("Nivel de ruido", f"{ruido} Nivel")
 
     st.divider()
 
