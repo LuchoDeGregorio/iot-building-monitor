@@ -70,9 +70,7 @@ Aplicación desarrollada en Python utilizando Streamlit para:
 
 El sistema incluye notificaciones automáticas mediante Telegram.
 
-Cuando el nivel del tanque cae por debajo de un umbral configurado, el sistema envía una alerta para advertir que el tanque necesita recarga.
-
-Esto permite actuar rápidamente ante posibles problemas en el suministro de agua.
+Cuando el nivel del tanque cae por debajo de un umbral configurado, el sistema envía una alerta para advertir que el tanque necesita recarga. Esto permite actuar rápidamente ante posibles problemas en el suministro de agua.
 ----------------------------------------------------------------------------------------------------------------------------
 Ejemplo de datos enviados
 
