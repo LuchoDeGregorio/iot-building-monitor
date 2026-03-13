@@ -69,19 +69,19 @@ Aplicación desarrollada en Python utilizando Streamlit para:
 5) Sistema de alertas
 
 El sistema incluye notificaciones automáticas mediante Telegram.
-
-Cuando el nivel del tanque cae por debajo de un umbral configurado, el sistema envía una alerta para advertir que el tanque necesita recarga. Esto permite actuar rápidamente ante posibles problemas en el suministro de agua.
+Cuando el Nivel del tanque cae por debajo de un umbral configurado, el sistema envia un alerta para notificar que el tanque
+necesita abrir la valvula para recarga. esto permite actuar de forma rapida ante posible problemas de suministros de agua.
 ----------------------------------------------------------------------------------------------------------------------------
 Ejemplo de datos enviados
+El ESP32 envia datos en formato JSON:
 
-El ESP32 envía datos estructurados en formato JSON:
 {
   "device_id": "edificio_01",
   "nivel_tanque": 70,
   "temperatura": 24.5,
   "ruido": 1
 }
------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
 Tecnologías utilizadas:
 
 *Hardware
