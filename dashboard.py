@@ -57,6 +57,7 @@ if not data.empty:
     temperatura = ultimo["temperatura"]
     nivel = ultimo["nivel_tanque"]
     corriente = ultimo["corriente"]
+    ruido = ultimo["ruido"]
 
     st.subheader("Alertas del sistema")
 
@@ -78,11 +79,12 @@ if not data.empty:
     if not alerta:
         st.success("✅ Sistema funcionando normalmente")
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
 
     col1.metric("Temperatura", f"{temperatura:.2f} °C")
     col2.metric("Nivel tanque", f"{nivel} %")
     col3.metric("Corriente bomba", f"{corriente} A")
+    col4.metric("Corriente bomba", f"{ruido} Nivel")
 
     st.divider()
 
@@ -107,7 +109,7 @@ if not data.empty:
         data_device.set_index("created_at")["temperatura"]
     )
 
-    #enviar_alerta("Prueba de alerta desde el sistema IoT")
+#enviar_alerta("Prueba de alerta desde el sistema IoT")
 
 else:
     st.warning("No hay datos todavía")
